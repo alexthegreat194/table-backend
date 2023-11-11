@@ -15,6 +15,10 @@ db.initialize().then(async () => {
 
     app.use('/', userRouter);
 
+    app.get('/', (req: express.Request, res: express.Response) => {
+        return res.send('Hello World!');
+    });
+
     app.listen(port, () => {
         console.log(`Listening at http://localhost:${port}/`);
     });

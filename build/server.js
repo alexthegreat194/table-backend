@@ -24,6 +24,9 @@ db_1.db.initialize().then(() => __awaiter(void 0, void 0, void 0, function* () {
     const app = (0, express_1.default)();
     const port = parseInt(process.env.PORT) || 3000;
     app.use('/', user_1.userRouter);
+    app.get('/', (req, res) => {
+        return res.send('Hello World!');
+    });
     app.listen(port, () => {
         console.log(`Listening at http://localhost:${port}/`);
     });
